@@ -49,14 +49,16 @@ def getBlog(request, pk):
     for tag in range(0, len(tagsList)):
         t = BlogTag.objects.get(tag=tagsList[tag])
         SuggTags.append(t)
+    # print('SuggTags: ', SuggTags)
 
-    # Here we itterate through the SuggTags list and
+    # Here we itterate through the SuggTags list
     for tag in range(0, len(SuggTags)):
         suggBlogs = SuggTags[tag].blog_set.all()
+        # print('suggBlogs1: ', suggBlogs)
 
-    print('suggBlogs: ', suggBlogs)
+    # print('suggBlogs: ', suggBlogs)
     newSugg = suggBlogs.exclude(_id=pk)
-    print('newSugg: ', newSugg)
+    # print('newSugg: ', newSugg)
     serializer3 = BlogSerializer(newSugg, many=True)
 
     return Response({'blog': serializer.data, 'tag_list': serializer2.data, 'suggBlogs': serializer3.data})
