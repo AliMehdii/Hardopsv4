@@ -61,13 +61,12 @@ npm start
 
 
 ### Additional informations about the project
-
-- If You would like to test the register functionality you can  use your own email account or you can log in with the one that i will give you.
+<!-- - If You would like to test the register functionality you can  use your own email account or you can log in with the one that i will give you.
 
 ```
 Email: tester@email.com
 Password: tester1234
-```
+``` -->
 
 - If you want to test out the `PayPal` API you will need the sandbox account.
 
